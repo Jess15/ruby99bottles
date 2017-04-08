@@ -14,6 +14,11 @@ VERSE
 	  	vrs = vrs.gsub("bottles", "bottle")
 	  	vrs = vrs.sub("one", "it")
 	  	vrs = vrs.sub("#{n-1} bottle of beer on the wall.", "no more bottles of beer on the wall.")
+	  elsif n==0
+	  	vrs = vrs.gsub("#{n} bottles of beer on", "No more bottles of beer on")
+	  	vrs = vrs.gsub("#{n} bottles of beer.", "no more bottles of beer.")
+	  	vrs = vrs.gsub("Take one down and pass it around,", "Go to the store and buy some more,")
+	  	vrs = vrs.gsub("#{n-1}", "#{n+99}")
 	  end
 	  return vrs
 	end
