@@ -13,7 +13,7 @@ VERSE
 	  elsif n==1
 	  	vrs = vrs.gsub("bottles", "bottle")
 	  	vrs = vrs.sub("one", "it")
-	  	vrs = vrs.sub("#{n} bottle of beer on the wall.", "no more bottles of beer on the wall.")
+	  	vrs = vrs.sub("#{n-1} bottle of beer on the wall.", "no more bottles of beer on the wall.")
 	  end
 	  return vrs
 	end
