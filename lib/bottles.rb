@@ -17,6 +17,19 @@ class Bottles
 		return couple 
 	end
 
+	def song
+		sing = "<<-SONG\n"
+		99.downto(0) { |i|
+			sing = sing+substitution(i)
+			if i != 0
+				sing = sing+"\n"
+			else
+				sing = sing+"\nSONG"
+			end
+		}
+		return sing
+	end
+
 	def substitution(n)
 		@vrs = <<-VERSE
 #{n} bottles of beer on the wall, #{n} bottles of beer.
