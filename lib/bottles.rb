@@ -9,7 +9,11 @@ class Bottles
 	end
 
 	def verses(x, y)
-		couple = substitution(x)+"\n"+substitution(y)
+		if x == 2 and y == 0
+			couple = substitution(x)+"\n"+substitution(x-1)+"\n"+substitution(x-2)
+		else	
+			couple = substitution(x)+"\n"+substitution(y)
+		end
 		return couple 
 	end
 
