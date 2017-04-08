@@ -9,7 +9,7 @@ class Bottles
 	end
 
 	def verses(x, y)
-		couple = substitution(x)+"\n"+"\n"+substitution(y)
+		couple = substitution(x)+"\n"+substitution(y)
 		return couple 
 	end
 
@@ -30,6 +30,6 @@ VERSE
 	  	@vrs = @vrs.gsub("Take one down and pass it around,", "Go to the store and buy some more,")
 	  	@vrs = @vrs.gsub("#{n-1}", "#{n+99}")
 	  end
-	  return vrs
+	  return @vrs
 	end
 end
