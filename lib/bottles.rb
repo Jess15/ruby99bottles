@@ -2,6 +2,7 @@ class Bottles
 
 	def initialize
 		@vrs = ""
+		@sing = ""
 	end
 
 	def verse(n)
@@ -18,14 +19,13 @@ class Bottles
 	end
 
 	def song
-		sing = ""
 		99.downto(0) { |i|
-			sing = sing+substitution(i)
+			@sing = @sing+substitution(i)
 			if i != 0
-				sing = sing+"\n"
+				@sing = @sing+"\n"
 			end
 		}
-		return sing
+		return @sing
 	end
 
 	def substitution(n)
@@ -33,18 +33,20 @@ class Bottles
 #{n} bottles of beer on the wall, #{n} bottles of beer.
 Take one down and pass it around, #{n-1} bottles of beer on the wall.
 VERSE
-		if n==2
-	  	@vrs = @vrs.sub("bottles of beer on the wall.", "bottle of beer on the wall.")
-	  elsif n==1
+		
+		case n
+		when 2
+			@vrs = @vrs.sub("bottles of beer on the wall.", "bottle of beer on the wall.")
+		when 1
 	  	@vrs = @vrs.gsub("bottles", "bottle")
 	  	@vrs = @vrs.sub("one", "it")
 	  	@vrs = @vrs.sub("#{n-1} bottle of beer on the wall.", "no more bottles of beer on the wall.")
-	  elsif n==0
+		when 0
 	  	@vrs = @vrs.gsub("#{n} bottles of beer on", "No more bottles of beer on")
 	  	@vrs = @vrs.gsub("#{n} bottles of beer.", "no more bottles of beer.")
 	  	@vrs = @vrs.gsub("Take one down and pass it around,", "Go to the store and buy some more,")
-	  	@vrs = @vrs.gsub("#{n-1}", "#{n+99}")
-	  end
+	  	@vrs = @vrs.gsub("#{n-1}", "#{n+99}")			
+		end
 	  return @vrs
 	end
 end
