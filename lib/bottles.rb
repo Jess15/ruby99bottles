@@ -18,13 +18,11 @@ class Bottles
 	end
 
 	def song
-		sing = "<<-SONG\n"
+		sing = ""
 		99.downto(0) { |i|
 			sing = sing+substitution(i)
 			if i != 0
 				sing = sing+"\n"
-			else
-				sing = sing+"\nSONG"
 			end
 		}
 		return sing
